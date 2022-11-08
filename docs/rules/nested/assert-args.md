@@ -1,6 +1,6 @@
-# Enforce that the correct number of assert arguments are used (`qunit/assert-args`)
+# Enforce that the correct number of assert arguments are used (`qunit/nested/assert-args`)
 
-💼 This rule is enabled in the ✅ `recommended` [config](https://github.com/platinumazure/eslint-plugin-qunit/blob/master/README.md#configurations).
+❌ This rule is deprecated. It was replaced by [`no-jsdump`](../no-jsdump.md).
 
 <!-- end auto-generated rule header -->
 

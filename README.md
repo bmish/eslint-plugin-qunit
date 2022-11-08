@@ -24,49 +24,14 @@ For more details on how to extend your configuration from a plugin configuration
 💼 [Configurations](https://github.com/platinumazure/eslint-plugin-qunit/blob/master/README.md#configurations) enabled in.\
 ✅ Set in the `recommended` [configuration](https://github.com/platinumazure/eslint-plugin-qunit/blob/master/README.md#configurations).\
 🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).\
-💡 Manually fixable by [editor suggestions](https://eslint.org/docs/developer-guide/working-with-rules#providing-suggestions).
+❌ Deprecated.
 
-| Name                                                                           | Description                                                             | 💼 | 🔧 | 💡 |
-| :----------------------------------------------------------------------------- | :---------------------------------------------------------------------- | :- | :- | :- |
-| [assert-args](docs/rules/assert-args.md)                                       | enforce that the correct number of assert arguments are used            | ✅  |    |    |
-| [literal-compare-order](docs/rules/literal-compare-order.md)                   | enforce comparison assertions have arguments in the right order         | ✅  | 🔧 |    |
-| [no-arrow-tests](docs/rules/no-arrow-tests.md)                                 | disallow arrow functions as QUnit test/module callbacks                 |    | 🔧 |    |
-| [no-assert-equal](docs/rules/no-assert-equal.md)                               | disallow the use of assert.equal                                        | ✅  |    | 💡 |
-| [no-assert-equal-boolean](docs/rules/no-assert-equal-boolean.md)               | require use of boolean assertions                                       | ✅  | 🔧 |    |
-| [no-assert-logical-expression](docs/rules/no-assert-logical-expression.md)     | disallow binary logical expressions in assert arguments                 | ✅  |    |    |
-| [no-assert-ok](docs/rules/no-assert-ok.md)                                     | disallow the use of assert.ok/assert.notOk                              |    |    |    |
-| [no-async-in-loops](docs/rules/no-async-in-loops.md)                           | disallow async calls in loops                                           | ✅  |    |    |
-| [no-async-module-callbacks](docs/rules/no-async-module-callbacks.md)           | disallow async module callbacks                                         | ✅  |    |    |
-| [no-async-test](docs/rules/no-async-test.md)                                   | disallow the use of asyncTest or QUnit.asyncTest                        | ✅  |    |    |
-| [no-commented-tests](docs/rules/no-commented-tests.md)                         | disallow commented tests                                                | ✅  |    |    |
-| [no-compare-relation-boolean](docs/rules/no-compare-relation-boolean.md)       | disallow comparing relational expressions to booleans in assertions     | ✅  | 🔧 |    |
-| [no-conditional-assertions](docs/rules/no-conditional-assertions.md)           | disallow assertions within if statements or conditional expressions     | ✅  |    |    |
-| [no-early-return](docs/rules/no-early-return.md)                               | disallow early return in tests                                          | ✅  |    |    |
-| [no-global-assertions](docs/rules/no-global-assertions.md)                     | disallow global QUnit assertions                                        | ✅  |    |    |
-| [no-global-expect](docs/rules/no-global-expect.md)                             | disallow global expect                                                  | ✅  |    |    |
-| [no-global-module-test](docs/rules/no-global-module-test.md)                   | disallow global module/test/asyncTest                                   | ✅  |    |    |
-| [no-global-stop-start](docs/rules/no-global-stop-start.md)                     | disallow global stop/start                                              | ✅  |    |    |
-| [no-hooks-from-ancestor-modules](docs/rules/no-hooks-from-ancestor-modules.md) | disallow the use of hooks from ancestor modules                         | ✅  |    |    |
-| [no-identical-names](docs/rules/no-identical-names.md)                         | disallow identical test and module names                                | ✅  |    |    |
-| [no-init](docs/rules/no-init.md)                                               | disallow use of QUnit.init                                              | ✅  |    |    |
-| [no-jsdump](docs/rules/no-jsdump.md)                                           | disallow use of QUnit.jsDump                                            | ✅  |    |    |
-| [no-loose-assertions](docs/rules/no-loose-assertions.md)                       | disallow the use of assert.equal/assert.ok/assert.notEqual/assert.notOk |    |    |    |
-| [no-negated-ok](docs/rules/no-negated-ok.md)                                   | disallow negation in assert.ok/assert.notOk                             | ✅  | 🔧 |    |
-| [no-nested-tests](docs/rules/no-nested-tests.md)                               | disallow nested QUnit.test() calls                                      | ✅  |    |    |
-| [no-ok-equality](docs/rules/no-ok-equality.md)                                 | disallow equality comparisons in assert.ok/assert.notOk                 | ✅  | 🔧 |    |
-| [no-only](docs/rules/no-only.md)                                               | disallow QUnit.only                                                     | ✅  |    |    |
-| [no-qunit-push](docs/rules/no-qunit-push.md)                                   | disallow QUnit.push                                                     | ✅  |    |    |
-| [no-qunit-start-in-tests](docs/rules/no-qunit-start-in-tests.md)               | disallow QUnit.start() within tests or test hooks                       | ✅  |    |    |
-| [no-qunit-stop](docs/rules/no-qunit-stop.md)                                   | disallow QUnit.stop                                                     | ✅  |    |    |
-| [no-reassign-log-callbacks](docs/rules/no-reassign-log-callbacks.md)           | disallow overwriting of QUnit logging callbacks                         | ✅  |    |    |
-| [no-reset](docs/rules/no-reset.md)                                             | disallow QUnit.reset                                                    | ✅  |    |    |
-| [no-setup-teardown](docs/rules/no-setup-teardown.md)                           | disallow setup/teardown module hooks                                    | ✅  | 🔧 |    |
-| [no-skip](docs/rules/no-skip.md)                                               | disallow QUnit.skip                                                     |    |    |    |
-| [no-test-expect-argument](docs/rules/no-test-expect-argument.md)               | disallow the expect argument in QUnit.test                              | ✅  |    |    |
-| [no-throws-string](docs/rules/no-throws-string.md)                             | disallow assert.throws() with block, string, and message args           | ✅  |    |    |
-| [require-expect](docs/rules/require-expect.md)                                 | enforce that `expect` is called                                         | ✅  |    |    |
-| [require-object-in-propequal](docs/rules/require-object-in-propequal.md)       | enforce use of objects as expected value in `assert.propEqual`          | ✅  |    |    |
-| [resolve-async](docs/rules/resolve-async.md)                                   | require that async calls are resolved                                   | ✅  |    |    |
+| Name                                                                                                     | Description                                                  | 💼 | 🔧 | ❌  |
+| :------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------- | :- | :- | :- |
+| [nested/assert-args](docs/rules/nested/assert-args.md)                                                   | enforce that the correct number of assert arguments are used |    |    | ❌  |
+| [nested/nested2/no-assert-logical-expression](docs/rules/nested/nested2/no-assert-logical-expression.md) | disallow binary logical expressions in assert arguments      |    |    | ❌  |
+| [no-jsdump](docs/rules/no-jsdump.md)                                                                     | disallow use of QUnit.jsDump                                 | ✅  |    | ❌  |
+| [no-negated-ok](docs/rules/no-negated-ok.md)                                                             | disallow negation in assert.ok/assert.notOk                  | ✅  | 🔧 | ❌  |
 
 <!-- end auto-generated rules list -->
 

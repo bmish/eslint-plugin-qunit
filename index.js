@@ -10,7 +10,12 @@
 const requireIndex = require("requireindex");
 
 module.exports = {
-    rules: requireIndex(`${__dirname}/lib/rules`),
+    rules: {
+        "no-jsdump": require("./lib/rules/no-jsdump"),
+        "nested/nested2/no-assert-logical-expression": require("./lib/rules/nested/nested2/no-assert-logical-expression"),
+        "nested/assert-args": require("./lib/rules/nested/assert-args"),
+        "no-negated-ok": require("./lib/rules/no-negated-ok")
+    },
 
     // eslint-disable-next-line sort-keys
     configs: {

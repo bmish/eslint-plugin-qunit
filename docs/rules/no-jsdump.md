@@ -1,5 +1,7 @@
 # Disallow use of QUnit.jsDump (`qunit/no-jsdump`)
 
+❌ This rule is deprecated. It was replaced by [`nested/assert-args`](nested/assert-args.md).
+
 💼 This rule is enabled in the ✅ `recommended` [config](https://github.com/platinumazure/eslint-plugin-qunit/blob/master/README.md#configurations).
 
 <!-- end auto-generated rule header -->

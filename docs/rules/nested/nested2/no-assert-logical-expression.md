@@ -1,6 +1,6 @@
-# Disallow binary logical expressions in assert arguments (`qunit/no-assert-logical-expression`)
+# Disallow binary logical expressions in assert arguments (`qunit/nested/nested2/no-assert-logical-expression`)
 
-💼 This rule is enabled in the ✅ `recommended` [config](https://github.com/platinumazure/eslint-plugin-qunit/blob/master/README.md#configurations).
+❌ This rule is deprecated. It was replaced by [`no-init`](../../no-init.md).
 
 <!-- end auto-generated rule header -->
 
