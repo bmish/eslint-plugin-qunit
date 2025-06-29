@@ -22,7 +22,7 @@ import {
     isComparativeAssertion,
     shouldCompareActualFirst,
     createAssertionCheck,
-} from "../utils";
+} from "../utils.js";
 
 const ASSERTION_OPPOSITES = {
     false: "true",

@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import { getAssertionNames } from "../utils";
+import { getAssertionNames } from "../utils.js";
 import { ReferenceTracker } from "eslint-utils";
 
 //------------------------------------------------------------------------------

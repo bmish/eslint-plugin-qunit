@@ -24,7 +24,7 @@ import {
     isComparativeAssertion,
     shouldCompareActualFirst,
     createAssertionCheck,
-} from "../utils";
+} from "../utils.js";
 
 //------------------------------------------------------------------------------
 // Rule Definition

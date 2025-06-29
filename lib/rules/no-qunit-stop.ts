@@ -1,5 +1,5 @@
 /**
- * @fileoverview Forbid expect argument in QUnit.test
+ * @fileoverview Forbid the use of QUnit.stop.
  * @author Kevin Partington
  */
 
@@ -25,7 +25,7 @@ import {
     isComparativeAssertion,
     shouldCompareActualFirst,
     createAssertionCheck,
-} from "../utils";
+} from "../utils.js";
 
 //------------------------------------------------------------------------------
 // Rule Definition
@@ -36,28 +36,39 @@ const rule = {
     meta: {
         type: "suggestion",
         docs: {
-            description: "disallow the expect argument in QUnit.test",
+            description: "disallow QUnit.stop",
             category: "Possible Errors",
-            url: "https://github.com/platinumazure/eslint-plugin-qunit/blob/main/docs/rules/no-test-expect-argument.md",
+            url: "https://github.com/platinumazure/eslint-plugin-qunit/blob/main/docs/rules/no-qunit-stop.md",
         },
         messages: {
-            noExpectArgument: "Do not use expect argument in {{callee}}().",
+            noQUnitStop: "Use assert.async() instead of QUnit.stop().",
         },
         schema: [],
     },
 
     create: function (context) {
-        const sourceCode = context.getSourceCode();
+        /**
+         * @param {import('estree').Node} calleeNode
+         * @returns {boolean}
+         */
+        function isQUnitStop(calleeNode) {
+            return (
+                calleeNode &&
+                calleeNode.type === "MemberExpression" &&
+                isStop(calleeNode)
+            );
+        }
+
+        //--------------------------------------------------------------------------
+        // Public
+        //--------------------------------------------------------------------------
 
         return {
             CallExpression: function (node) {
-                if (isTest(node.callee) && node.arguments.length > 2) {
+                if (isQUnitStop(node.callee)) {
                     context.report({
                         node: node,
-                        messageId: "noExpectArgument",
-                        data: {
-                            callee: sourceCode.getText(node.callee),
-                        },
+                        messageId: "noQUnitStop",
                     });
                 }
             },

@@ -9,7 +9,7 @@
 
 import { assert } from "chai";
 
-import { rules, configs } from "../index";
+import { rules, configs } from "../index.js";
 import fs from "node:fs";
 import path from "node:path";
 import requireIndex from "requireindex";

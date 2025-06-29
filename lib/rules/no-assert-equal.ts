@@ -26,7 +26,7 @@ import {
     isComparativeAssertion,
     shouldCompareActualFirst,
     createAssertionCheck,
-} from "../utils";
+} from "../utils.js";
 import { ReferenceTracker } from "eslint-utils";
 
 //------------------------------------------------------------------------------
