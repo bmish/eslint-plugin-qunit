@@ -2,14 +2,13 @@
  * @fileoverview Forbid the use of global module/test/asyncTest.
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-global-module-test"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-global-module-test";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

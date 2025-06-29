@@ -2,14 +2,13 @@
  * @fileoverview Ensure that no unit test is commented out.
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-commented-tests"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-commented-tests";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

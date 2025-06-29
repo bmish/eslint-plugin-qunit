@@ -4,14 +4,13 @@
  * @copyright 2016 Kevin Partington. All rights reserved.
  * See LICENSE file in root directory for full license.
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-reassign-log-callbacks"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-reassign-log-callbacks";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

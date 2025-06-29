@@ -2,14 +2,13 @@
  * @fileoverview prevent early return in a QUnit test
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-early-return"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-early-return";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

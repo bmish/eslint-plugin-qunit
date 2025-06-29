@@ -2,14 +2,13 @@
  * @fileoverview Forbid use of QUnit.jsDump().
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-jsdump"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-jsdump";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

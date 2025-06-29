@@ -2,14 +2,13 @@
  * @fileoverview Ensure async hooks are resolved in QUnit tests.
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/resolve-async"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/resolve-async";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Helpers

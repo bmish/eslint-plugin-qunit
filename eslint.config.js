@@ -1,20 +1,18 @@
-"use strict";
-
-const js = require("@eslint/js");
+import js from "@eslint/js";
 
 // @ts-expect-error -- TODO: no types yet
-const eslintPluginEslintComments = require("@eslint-community/eslint-plugin-eslint-comments/configs");
+import eslintPluginEslintComments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 
 // @ts-expect-error -- TODO: no types yet -- https://github.com/eslint-community/eslint-plugin-eslint-plugin/issues/310
-const eslintPluginEslintPluginAll = require("eslint-plugin-eslint-plugin/configs/all");
-const eslintPluginMarkdown = require("eslint-plugin-markdown");
-const eslintPluginMocha = require("eslint-plugin-mocha");
-const eslintPluginN = require("eslint-plugin-n");
-const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
-const eslintPluginUnicorn = require("eslint-plugin-unicorn");
-const globals = require("globals");
+import eslintPluginEslintPluginAll from "eslint-plugin-eslint-plugin/configs/all";
+import eslintPluginMarkdown from "eslint-plugin-markdown";
+import eslintPluginMocha from "eslint-plugin-mocha";
+import eslintPluginN from "eslint-plugin-n";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import eslintPluginUnicorn from "eslint-plugin-unicorn";
+import globals from "globals";
 
-module.exports = [
+export default [
     js.configs.recommended,
 
     eslintPluginEslintComments.recommended,
@@ -30,7 +28,7 @@ module.exports = [
 
     {
         languageOptions: {
-            sourceType: "script",
+            sourceType: "module",
             ecmaVersion: "latest",
             globals: globals.node,
         },
@@ -195,12 +193,6 @@ module.exports = [
             "no-unused-vars": "off",
             "no-var": "off",
             strict: "off",
-        },
-    },
-    {
-        files: ["**/*.mjs"],
-        languageOptions: {
-            sourceType: "module",
         },
     },
     {

@@ -2,14 +2,13 @@
  * @fileoverview Forbid the use of QUnit.push.
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-qunit-push"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-qunit-push";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

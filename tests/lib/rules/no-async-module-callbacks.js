@@ -2,14 +2,13 @@
  * @fileoverview disallow async module callbacks
  * @author Raymond Cohen
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-async-module-callbacks"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-async-module-callbacks";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Helpers

@@ -2,14 +2,13 @@
  * @fileoverview Forbid usage of nested QUnit.test()
  * @author Aliaksandr Yermalayeu
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-nested-tests"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-nested-tests";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

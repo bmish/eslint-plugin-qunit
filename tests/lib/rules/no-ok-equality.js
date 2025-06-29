@@ -2,14 +2,13 @@
  * @fileoverview Forbid the use of equality comparisons in ok/notOk assertions.
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-ok-equality"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-ok-equality";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Helpers

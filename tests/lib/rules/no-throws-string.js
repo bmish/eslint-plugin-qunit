@@ -2,14 +2,13 @@
  * @fileoverview forbid assert.throws() with block, string, and message
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-throws-string"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-throws-string";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

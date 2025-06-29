@@ -2,14 +2,13 @@
  * @fileoverview Forbid the use of asyncTest and QUnit.asyncTest.
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-async-test"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-async-test";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

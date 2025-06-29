@@ -1,11 +1,9 @@
-"use strict";
-
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-assert-equal-boolean"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-assert-equal-boolean";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

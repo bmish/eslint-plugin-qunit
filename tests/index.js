@@ -2,19 +2,19 @@
  * @fileoverview Unit tests for the package index.
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const assert = require("chai").assert,
-    { rules, configs } = require("../index"),
-    fs = require("node:fs"),
-    path = require("node:path"),
-    requireIndex = require("requireindex"),
-    plugin = require("../index.js"),
-    recommendedFlatConfig = require("../lib/configs/recommended.js");
+import { assert } from "chai";
+
+import { rules, configs } from "../index";
+import fs from "node:fs";
+import path from "node:path";
+import requireIndex from "requireindex";
+import plugin from "../index.js";
+import recommendedFlatConfig from "../lib/configs/recommended.js";
 
 //------------------------------------------------------------------------------
 // Tests

@@ -2,14 +2,13 @@
  * @fileoverview forbid expect argument in QUnit.test
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-test-expect-argument"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-test-expect-argument";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

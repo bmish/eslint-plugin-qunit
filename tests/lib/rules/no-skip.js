@@ -2,14 +2,13 @@
  * @fileoverview Forbid the use of QUnit.skip
  * @author Steve Calvert
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-skip"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-skip";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

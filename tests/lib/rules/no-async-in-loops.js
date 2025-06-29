@@ -2,14 +2,13 @@
  * @fileoverview Forbid the use of async within loops.
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-async-in-loops"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-async-in-loops";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

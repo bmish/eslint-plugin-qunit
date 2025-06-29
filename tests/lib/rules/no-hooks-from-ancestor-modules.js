@@ -2,14 +2,13 @@
  * @fileoverview disallow the use of hooks from ancestor modules
  * @author Raymond Cohen
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-hooks-from-ancestor-modules"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-hooks-from-ancestor-modules";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Helpers

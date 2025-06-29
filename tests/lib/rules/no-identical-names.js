@@ -1,12 +1,10 @@
-"use strict";
-
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-identical-names"),
-    RuleTester = require("eslint").RuleTester,
-    { outdent } = require("outdent");
+import rule from "../../../lib/rules/no-identical-names";
+import { RuleTester } from "eslint";
+import { outdent } from "outdent";
 
 //------------------------------------------------------------------------------
 // Tests

@@ -2,14 +2,13 @@
  * @fileoverview Forbid the use of QUnit.stop.
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-qunit-stop"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-qunit-stop";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

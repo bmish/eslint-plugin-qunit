@@ -2,14 +2,13 @@
  * @fileoverview forbid QUnit.start() within tests or test hooks
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-qunit-start-in-tests"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-qunit-start-in-tests";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Helpers

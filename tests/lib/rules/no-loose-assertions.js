@@ -2,14 +2,13 @@
  * @fileoverview Forbid the use of assert.equal/assert.notEqual/assert.ok/notOk and suggest other assertions.
  * @author ventuno
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-loose-assertions"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-loose-assertions";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

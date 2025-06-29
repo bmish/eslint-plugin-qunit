@@ -2,14 +2,13 @@
  * @fileoverview Forbid the use of QUnit.only.
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-only"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-only";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

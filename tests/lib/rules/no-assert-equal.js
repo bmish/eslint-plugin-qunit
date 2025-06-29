@@ -2,14 +2,13 @@
  * @fileoverview Forbid the use of assert.equal and suggest other assertions.
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-assert-equal"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/no-assert-equal";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests

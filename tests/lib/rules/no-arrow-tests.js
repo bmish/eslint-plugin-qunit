@@ -4,15 +4,14 @@
  * @copyright 2016 Kevin Partington. All rights reserved.
  * See LICENSE file in root directory for full license.
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-arrow-tests"),
-    RuleTester = require("eslint").RuleTester,
-    { outdent } = require("outdent");
+import rule from "../../../lib/rules/no-arrow-tests";
+import { RuleTester } from "eslint";
+import { outdent } from "outdent";
 
 //------------------------------------------------------------------------------
 // Tests

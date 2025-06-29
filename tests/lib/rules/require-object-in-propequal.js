@@ -2,15 +2,14 @@
  * @fileoverview Enforce use of objects as expected values in `assert.propEqual`
  * @author Kevin Partington
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/require-object-in-propequal"),
-    RuleTester = require("eslint").RuleTester,
-    testUtils = require("../../testUtils");
+import rule from "../../../lib/rules/require-object-in-propequal";
+import { RuleTester } from "eslint";
+import { wrapInTest, wrapInArrowTest } from "../../testUtils";
 
 //------------------------------------------------------------------------------
 // Helpers
@@ -23,7 +22,7 @@ const rule = require("../../../lib/rules/require-object-in-propequal"),
  */
 function createInvalid(assertionCode, invalidValue) {
     return {
-        code: testUtils.wrapInTest(assertionCode),
+        code: wrapInTest(assertionCode),
         errors: [
             {
                 messageId: "useObject",
@@ -52,103 +51,70 @@ const ruleTester = new RuleTester({
 ruleTester.run("require-object-in-propequal", rule, {
     valid: [
         // Object expressions/array expressions
-        testUtils.wrapInTest("assert.propEqual(actual, { foo: 'bar' });"),
-        testUtils.wrapInTest("assert.propEqual(actual, ['string']);"),
+        wrapInTest("assert.propEqual(actual, { foo: 'bar' });"),
+        wrapInTest("assert.propEqual(actual, ['string']);"),
 
         // Identifiers, member expressions, calls, and new expressions are fine
-        testUtils.wrapInTest("assert.propEqual(actual, someVar);"),
-        testUtils.wrapInTest("assert.propEqual(actual, obj.prop);"),
-        testUtils.wrapInTest("assert.propEqual(actual, func());"),
-        testUtils.wrapInTest("assert.propEqual(actual, new Foo());"),
+        wrapInTest("assert.propEqual(actual, someVar);"),
+        wrapInTest("assert.propEqual(actual, obj.prop);"),
+        wrapInTest("assert.propEqual(actual, func());"),
+        wrapInTest("assert.propEqual(actual, new Foo());"),
 
         // this is fine
-        testUtils.wrapInTest("assert.propEqual(actual, this);"),
+        wrapInTest("assert.propEqual(actual, this);"),
 
         // Global assertion
-        testUtils.wrapInTest("propEqual(actual, { foo: 'bar' });"),
+        wrapInTest("propEqual(actual, { foo: 'bar' });"),
 
         // Not propEqual
-        testUtils.wrapInTest("assert.deepEqual(actual, { foo: 'bar' });"),
-        testUtils.wrapInTest("assert.deepEqual(actual, 0);"),
-        testUtils.wrapInTest("assert.deepEqual(actual, -1);"),
-        testUtils.wrapInTest("assert.deepEqual(actual, 'string');"),
-        testUtils.wrapInTest("assert.deepEqual(actual, `template`);"),
-        testUtils.wrapInTest("assert.deepEqual(actual, true);"),
-        testUtils.wrapInTest("assert.deepEqual(actual, false);"),
-        testUtils.wrapInTest("assert.deepEqual(actual, null);"),
-        testUtils.wrapInTest("assert.deepEqual(actual, /regex/);"),
-        testUtils.wrapInTest("assert.deepEqual(actual, ++foo);"),
-        testUtils.wrapInTest("assert.deepEqual(actual, foo++);"),
-        testUtils.wrapInTest("assert.deepEqual(actual, --foo);"),
-        testUtils.wrapInTest("assert.deepEqual(actual, foo--);"),
-        testUtils.wrapInTest("assert.deepEqual(actual, <JSX />);"),
+        wrapInTest("assert.deepEqual(actual, { foo: 'bar' });"),
+        wrapInTest("assert.deepEqual(actual, 0);"),
+        wrapInTest("assert.deepEqual(actual, -1);"),
+        wrapInTest("assert.deepEqual(actual, 'string');"),
+        wrapInTest("assert.deepEqual(actual, `template`);"),
+        wrapInTest("assert.deepEqual(actual, true);"),
+        wrapInTest("assert.deepEqual(actual, false);"),
+        wrapInTest("assert.deepEqual(actual, null);"),
+        wrapInTest("assert.deepEqual(actual, /regex/);"),
+        wrapInTest("assert.deepEqual(actual, ++foo);"),
+        wrapInTest("assert.deepEqual(actual, foo++);"),
+        wrapInTest("assert.deepEqual(actual, --foo);"),
+        wrapInTest("assert.deepEqual(actual, foo--);"),
+        wrapInTest("assert.deepEqual(actual, <JSX />);"),
 
-        testUtils.wrapInTest("assert.deepEqual(actual, 0n);"),
+        wrapInTest("assert.deepEqual(actual, 0n);"),
 
-        testUtils.wrapInTest("assert.propEqual(actual, foo?.bar);"),
-        testUtils.wrapInTest("assert.propEqual(actual, foo?.bar?.());"),
+        wrapInTest("assert.propEqual(actual, foo?.bar);"),
+        wrapInTest("assert.propEqual(actual, foo?.bar?.());"),
     ],
 
     invalid: [
+        createInvalid(wrapInTest("assert.propEqual(actual, 0);"), "0"),
+        createInvalid(wrapInArrowTest("assert.propEqual(actual, 0);"), "0"),
+        createInvalid(wrapInTest("assert.propEqual(actual, -1);"), "-1"),
         createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, 0);"),
-            "0",
-        ),
-        createInvalid(
-            testUtils.wrapInArrowTest("assert.propEqual(actual, 0);"),
-            "0",
-        ),
-        createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, -1);"),
-            "-1",
-        ),
-        createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, 'string');"),
+            wrapInTest("assert.propEqual(actual, 'string');"),
             "'string'",
         ),
         createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, `template`);"),
+            wrapInTest("assert.propEqual(actual, `template`);"),
             "`template`",
         ),
+        createInvalid(wrapInTest("assert.propEqual(actual, true);"), "true"),
+        createInvalid(wrapInTest("assert.propEqual(actual, false);"), "false"),
+        createInvalid(wrapInTest("assert.propEqual(actual, null);"), "null"),
         createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, true);"),
-            "true",
-        ),
-        createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, false);"),
-            "false",
-        ),
-        createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, null);"),
-            "null",
-        ),
-        createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, /regex/);"),
+            wrapInTest("assert.propEqual(actual, /regex/);"),
             "/regex/",
         ),
+        createInvalid(wrapInTest("assert.propEqual(actual, ++foo);"), "++foo"),
+        createInvalid(wrapInTest("assert.propEqual(actual, foo++);"), "foo++"),
+        createInvalid(wrapInTest("assert.propEqual(actual, --foo);"), "--foo"),
+        createInvalid(wrapInTest("assert.propEqual(actual, foo--);"), "foo--"),
         createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, ++foo);"),
-            "++foo",
-        ),
-        createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, foo++);"),
-            "foo++",
-        ),
-        createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, --foo);"),
-            "--foo",
-        ),
-        createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, foo--);"),
-            "foo--",
-        ),
-        createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, <JSX />)"),
+            wrapInTest("assert.propEqual(actual, <JSX />)"),
             "<JSX />",
         ),
-        createInvalid(
-            testUtils.wrapInTest("assert.propEqual(actual, 0n);"),
-            "0n",
-        ),
+        createInvalid(wrapInTest("assert.propEqual(actual, 0n);"), "0n"),
     ],
 });

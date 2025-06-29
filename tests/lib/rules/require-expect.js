@@ -3,14 +3,13 @@
  * block or when passing `assert` to a function.
  * @author Mitch Lloyd
  */
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/require-expect"),
-    RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/require-expect";
+import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
 // Tests
