@@ -7,9 +7,10 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-negated-ok";
+import rule from "../../../lib/rules/no-negated-ok.js";
 import { RuleTester } from "eslint";
-import { wrapInTest, wrapInArrowTest } from "../../testUtils";
+import { wrapInTest, wrapInArrowTest } from "../../testUtils.js";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Helper functions
@@ -110,7 +111,7 @@ ruleTester.run("no-negated-ok", rule, {
             // TypeScript: test callback is adding a type to `this`
             code: "QUnit.test('test', (this: LocalTestContext, assert) => { assert.ok(!foo); });",
             output: "QUnit.test('test', (this: LocalTestContext, assert) => { assert.notOk(foo); });",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
             errors: [createError("assert.ok")],
         },
         {

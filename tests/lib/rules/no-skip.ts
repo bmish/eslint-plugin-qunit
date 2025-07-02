@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-skip";
+import rule from "../../../lib/rules/no-skip.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

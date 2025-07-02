@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-async-module-callbacks";
+import rule from "../../../lib/rules/no-async-module-callbacks.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

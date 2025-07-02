@@ -91,10 +91,8 @@ function parseOptions(options) {
                 }
                 assertions.push(assertion);
                 errorMessageConfig[assertion] =
-                    ERROR_MESSAGE_CONFIG[
-                        /** @type {keyof typeof ERROR_MESSAGE_CONFIG} */ (
-                            assertion
-                        )
+                    /** @type {keyof typeof ERROR_MESSAGE_CONFIG} */ ERROR_MESSAGE_CONFIG[
+                        assertion
                     ];
             } else {
                 // Skip if rule was defined before.
@@ -165,7 +163,7 @@ const rule = {
 
     create: function (context) {
         const [assertions, errorMessageConfig] = parseOptions(
-            /** @type {Options} */ (context.options),
+            /** @type {Options} */ context.options,
         );
         return createAssertionCheck(assertions, errorMessageConfig).call(
             this,

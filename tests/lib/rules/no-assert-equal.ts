@@ -7,8 +7,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-assert-equal";
+import rule from "../../../lib/rules/no-assert-equal.js";
 import { RuleTester } from "eslint";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Tests
@@ -161,7 +162,7 @@ ruleTester.run("no-assert-equal", rule, {
         {
             // TypeScript: test callback is adding a type to `this`
             code: "QUnit.test('Name', function (this: LocalTestContext, assert) { assert.equal(a, b); });",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
             errors: [
                 {
                     messageId: "unexpectedAssertEqual",

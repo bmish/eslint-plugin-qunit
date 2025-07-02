@@ -2,8 +2,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-assert-equal-boolean";
+import rule from "../../../lib/rules/no-assert-equal-boolean.js";
 import { RuleTester } from "eslint";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Tests
@@ -151,7 +152,7 @@ ruleTester.run("no-assert-equal-boolean", rule, {
         {
             code: "QUnit.test('Name', function (this: LocalTestContext, assert) { assert.equal(a, true); });",
             output: "QUnit.test('Name', function (this: LocalTestContext, assert) { assert.true(a); });",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
             errors: [{ messageId: "useAssertTrueOrFalse" }],
         },
     ],

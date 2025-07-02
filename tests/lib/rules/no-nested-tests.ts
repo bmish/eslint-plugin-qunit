@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-nested-tests";
+import rule from "../../../lib/rules/no-nested-tests.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

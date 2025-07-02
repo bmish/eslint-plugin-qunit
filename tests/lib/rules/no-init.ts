@@ -9,7 +9,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-init";
+import rule from "../../../lib/rules/no-init.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

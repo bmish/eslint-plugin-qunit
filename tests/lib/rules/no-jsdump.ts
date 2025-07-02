@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-jsdump";
+import rule from "../../../lib/rules/no-jsdump.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

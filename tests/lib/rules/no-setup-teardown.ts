@@ -9,7 +9,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-setup-teardown";
+import rule from "../../../lib/rules/no-setup-teardown.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

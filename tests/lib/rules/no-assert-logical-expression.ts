@@ -7,9 +7,10 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-assert-logical-expression";
+import rule from "../../../lib/rules/no-assert-logical-expression.js";
 import { RuleTester } from "eslint";
-import { wrapInTest, wrapInArrowTest } from "../../testUtils";
+import { wrapInTest, wrapInArrowTest } from "../../testUtils.js";
+import typescriptParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Tests
@@ -64,7 +65,7 @@ ruleTester.run("no-assert-logical-expression", rule, {
         {
             // TypeScript: test callback is adding a type to `this`
             code: "QUnit.test('test', (this: LocalTestContext, assert) => { assert.ok(foo && bar); });",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptParser },
             errors: [
                 {
                     messageId: "noLogicalOperator",

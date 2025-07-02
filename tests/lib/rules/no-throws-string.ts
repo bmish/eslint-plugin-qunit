@@ -7,8 +7,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-throws-string";
+import rule from "../../../lib/rules/no-throws-string.js";
 import { RuleTester } from "eslint";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Tests
@@ -56,7 +57,7 @@ ruleTester.run("no-throws-string", rule, {
         {
             // TypeScript: test callback is adding a type to `this`
             code: "QUnit.test('a test', function (this: LocalTestContext, assert) { assert.throws(function () { }, 'Error message', 'Error should have been thrown'); });",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
             errors: [
                 {
                     messageId: "noThrowsWithString",

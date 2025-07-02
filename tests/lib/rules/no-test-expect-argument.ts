@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-test-expect-argument";
+import rule from "../../../lib/rules/no-test-expect-argument.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

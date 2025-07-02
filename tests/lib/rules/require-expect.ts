@@ -8,8 +8,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/require-expect";
+import rule from "../../../lib/rules/require-expect.js";
 import { RuleTester } from "eslint";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Tests
@@ -76,7 +77,7 @@ ruleTester.run("require-expect", rule, {
             // TypeScript: test callback is adding a type to `this`
             code: "test('name', function(this: LocalTestContext) { expect(0) });",
             options: [], // Defaults to never-except-zero
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
         },
 
         // CallExpression without parent object throws no errors
@@ -193,7 +194,7 @@ ruleTester.run("require-expect", rule, {
             // TypeScript: test callback is adding a type to `this`
             code: "test('name', function(this: LocalTestContext, assert) { other.assert.expect(0) });",
             options: ["always"],
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
             errors: [alwaysErrorMessage("assert.expect")],
         },
 

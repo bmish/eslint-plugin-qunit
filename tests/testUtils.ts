@@ -3,18 +3,10 @@
  * @author Ed Sanders
  */
 
-/**
- * @param {string} assertionCode
- * @returns {string}
- */
-export function wrapInTest(assertionCode) {
+export function wrapInTest(assertionCode: string): string {
     return `QUnit.test('test', function (assert) { ${assertionCode} });`;
 }
 
-/**
- * @param {string} assertionCode
- * @returns {string}
- */
-export function wrapInArrowTest(assertionCode) {
+export function wrapInArrowTest(assertionCode: string): string {
     return `QUnit.test('test', (assert) => { ${assertionCode} });`;
 }

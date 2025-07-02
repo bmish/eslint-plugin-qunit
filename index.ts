@@ -21,7 +21,7 @@ export const rules = requireIndex(`${__dirname}/lib/rules`);
 export const configs = {
     recommended: {
         plugins: ["qunit"],
-        rules: /** @type {import('eslint').Linter.RulesRecord} */ ({
+        rules: /** @type {import('eslint').Linter.RulesRecord} */ {
             "qunit/assert-args": "error",
             "qunit/literal-compare-order": "error",
             "qunit/no-assert-equal": "error",
@@ -57,7 +57,7 @@ export const configs = {
             "qunit/require-expect": "error",
             "qunit/require-object-in-propequal": "error",
             "qunit/resolve-async": "error",
-        }),
+        },
     },
 };
 

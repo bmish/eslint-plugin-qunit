@@ -9,9 +9,10 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-arrow-tests";
+import rule from "../../../lib/rules/no-arrow-tests.js";
 import { RuleTester } from "eslint";
 import { outdent } from "outdent";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Tests
@@ -67,7 +68,7 @@ ruleTester.run("no-arrow-tests", rule, {
             // TypeScript: test callback is adding a type to `this`
             code: "QUnit.test('test', (this: LocalTestContext, assert) => { assert.ok(true); });",
             output: "QUnit.test('test', function(this: LocalTestContext, assert) { assert.ok(true); });",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
             errors: [
                 {
                     messageId: "noArrowFunction",

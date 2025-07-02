@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-only";
+import rule from "../../../lib/rules/no-only.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

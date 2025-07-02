@@ -7,8 +7,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-ok-equality";
+import rule from "../../../lib/rules/no-ok-equality.js";
 import { RuleTester } from "eslint";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Helpers
@@ -103,7 +104,7 @@ ruleTester.run("no-ok-equality", rule, {
             // TypeScript: test callback is adding a type to `this`
             code: "test('Name', function (this: LocalTestContext, assert) { assert.ok(x === 1); });",
             output: "test('Name', function (this: LocalTestContext, assert) { assert.strictEqual(x, 1); });",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
             errors: [createError("assert.ok", "assert.strictEqual", "x", "1")],
         },
         {

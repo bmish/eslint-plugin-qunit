@@ -7,9 +7,10 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/assert-args";
+import rule from "../../../lib/rules/assert-args.js";
 import { RuleTester } from "eslint";
-import { wrapInTest, wrapInArrowTest } from "../../testUtils";
+import { wrapInTest, wrapInArrowTest } from "../../testUtils.js";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Tests
@@ -216,7 +217,7 @@ ruleTester.run("assert-args", rule, {
         {
             // TypeScript: test callback is adding a type to `this`
             code: "QUnit.test('test', (this: LocalTestContext, assert) => { assert.ok(); });",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
             errors: [
                 {
                     messageId: "unexpectedArgCountNoMessage",

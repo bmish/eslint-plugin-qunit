@@ -9,7 +9,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-global-stop-start";
+import rule from "../../../lib/rules/no-global-stop-start.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

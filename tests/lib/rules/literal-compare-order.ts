@@ -7,9 +7,10 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/literal-compare-order";
+import rule from "../../../lib/rules/literal-compare-order.js";
 import { RuleTester } from "eslint";
-import { wrapInTest, wrapInArrowTest } from "../../testUtils";
+import { wrapInTest, wrapInArrowTest } from "../../testUtils.js";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Tests
@@ -95,7 +96,7 @@ ruleTester.run("literal-compare-order", rule, {
             output: wrapInTest(
                 "QUnit.test('test', (this: LocalTestContext) => { equal(variable, 'Literal'); });",
             ),
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
             errors: [
                 {
                     messageId: "actualFirst",

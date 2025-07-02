@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-commented-tests";
+import rule from "../../../lib/rules/no-commented-tests.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

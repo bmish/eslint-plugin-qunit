@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-assert-ok";
+import rule from "../../../lib/rules/no-assert-ok.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

@@ -9,7 +9,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-reassign-log-callbacks";
+import rule from "../../../lib/rules/no-reassign-log-callbacks.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

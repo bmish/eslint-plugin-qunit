@@ -7,9 +7,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-conditional-assertions";
+import rule from "../../../lib/rules/no-conditional-assertions.js";
 import { RuleTester } from "eslint";
-import { wrapInTest, wrapInArrowTest } from "../../testUtils";
+import { wrapInTest, wrapInArrowTest } from "../../testUtils.js";
 
 //------------------------------------------------------------------------------
 // Helpers

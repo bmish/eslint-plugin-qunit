@@ -7,9 +7,10 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-compare-relation-boolean";
+import rule from "../../../lib/rules/no-compare-relation-boolean.js";
 import { RuleTester } from "eslint";
-import { wrapInTest, wrapInArrowTest } from "../../testUtils";
+import { wrapInTest, wrapInArrowTest } from "../../testUtils.js";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Helper Functions
@@ -69,7 +70,7 @@ ruleTester.run("no-compare-relation-boolean", rule, {
             // TypeScript: test callback is adding a type to `this`
             code: "QUnit.test('test', (this: LocalTestContext, assert) => { assert.equal(a === b, true); });",
             output: "QUnit.test('test', (this: LocalTestContext, assert) => { assert.ok(a === b); });",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
         },
         {
             code: wrapInArrowTest("assert.equal(a === b, true);"),

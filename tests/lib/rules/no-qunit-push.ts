@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-qunit-push";
+import rule from "../../../lib/rules/no-qunit-push.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

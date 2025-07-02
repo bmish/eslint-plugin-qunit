@@ -2,7 +2,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-identical-names";
+import rule from "../../../lib/rules/no-identical-names.js";
 import { RuleTester } from "eslint";
 import { outdent } from "outdent";
 

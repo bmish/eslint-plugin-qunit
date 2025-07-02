@@ -7,8 +7,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-hooks-from-ancestor-modules";
+import rule from "../../../lib/rules/no-hooks-from-ancestor-modules.js";
 import { RuleTester } from "eslint";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Helpers
@@ -134,7 +135,7 @@ ruleTester.run("no-hooks-from-ancestor-modules", rule, {
         {
             // TypeScript: module callback is adding a type to `this`
             code: 'QUnit.module("module", function(this: LocalTestContext, hooks) { hooks.afterEach(function() {}); });',
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
         },
     ],
 
@@ -293,7 +294,7 @@ ruleTester.run("no-hooks-from-ancestor-modules", rule, {
                     });
                 });
             `,
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
             errors: [
                 createError({
                     invokedMethodName: "afterEach",

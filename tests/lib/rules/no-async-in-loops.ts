@@ -7,8 +7,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-async-in-loops";
+import rule from "../../../lib/rules/no-async-in-loops.js";
 import { RuleTester } from "eslint";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 //------------------------------------------------------------------------------
 // Tests
@@ -573,7 +574,7 @@ ruleTester.run("no-async-in-loops", rule, {
         {
             // TypeScript: test callback is adding a type to `this`
             code: "test('name', function (this: LocalTestContext, assert) { while (false) assert.async(); });",
-            languageOptions: { parser: require("@typescript-eslint/parser") },
+            languageOptions: { parser: typescriptEslintParser },
             errors: [
                 {
                     messageId: "unexpectedAsyncInLoop",

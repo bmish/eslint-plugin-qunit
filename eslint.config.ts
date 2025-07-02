@@ -11,9 +11,12 @@ import eslintPluginN from "eslint-plugin-n";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
 import globals from "globals";
+import tseslint from "typescript-eslint";
 
-export default [
+export default tseslint.config(
     js.configs.recommended,
+
+    tseslint.configs.recommended,
 
     eslintPluginEslintComments.recommended,
     eslintPluginEslintPluginAll,
@@ -23,7 +26,7 @@ export default [
 
     {
         ...eslintPluginMocha.configs.flat.recommended,
-        files: ["tests/**/*.js"],
+        files: ["tests/**/*.{js,ts}"],
     },
 
     {
@@ -193,9 +196,12 @@ export default [
             "no-unused-vars": "off",
             "no-var": "off",
             strict: "off",
+
+            "@typescript-eslint/no-unused-vars": "off",
+            "@typescript-eslint/no-unused-expressions": "off",
         },
     },
     {
         ignores: ["dist/**/*"],
     },
-];
+);

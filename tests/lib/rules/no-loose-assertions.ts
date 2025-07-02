@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-loose-assertions";
+import rule from "../../../lib/rules/no-loose-assertions.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

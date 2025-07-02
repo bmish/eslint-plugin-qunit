@@ -7,9 +7,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/require-object-in-propequal";
+import rule from "../../../lib/rules/require-object-in-propequal.js";
 import { RuleTester } from "eslint";
-import { wrapInTest, wrapInArrowTest } from "../../testUtils";
+import { wrapInTest, wrapInArrowTest } from "../../testUtils.js";
 
 //------------------------------------------------------------------------------
 // Helpers

@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-qunit-start-in-tests";
+import rule from "../../../lib/rules/no-qunit-start-in-tests.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

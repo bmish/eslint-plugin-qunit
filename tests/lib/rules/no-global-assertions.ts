@@ -7,9 +7,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-global-assertions";
+import rule from "../../../lib/rules/no-global-assertions.js";
 import { RuleTester } from "eslint";
-import { wrapInTest } from "../../testUtils";
+import { wrapInTest } from "../../testUtils.js";
 
 //------------------------------------------------------------------------------
 // Helpers

@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/no-global-module-test";
+import rule from "../../../lib/rules/no-global-module-test.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------

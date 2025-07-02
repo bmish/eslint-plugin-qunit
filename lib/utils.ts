@@ -90,18 +90,16 @@ function getAssertionMetadata(calleeNode, assertVar) {
             )
         ) {
             const assertionName =
-                /** @type {keyof typeof ASSERTION_METADATA} */ (
-                    calleeNode.property.name
-                );
+                /** @type {keyof typeof ASSERTION_METADATA} */ calleeNode
+                    .property.name;
             return ASSERTION_METADATA[assertionName];
         }
     } else if (
         calleeNode.type === "Identifier" &&
         Object.hasOwnProperty.call(ASSERTION_METADATA, calleeNode.name)
     ) {
-        const assertionName = /** @type {keyof typeof ASSERTION_METADATA} */ (
-            calleeNode.name
-        );
+        const assertionName =
+            /** @type {keyof typeof ASSERTION_METADATA} */ calleeNode.name;
         return ASSERTION_METADATA[assertionName];
     }
 

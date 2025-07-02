@@ -7,7 +7,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-import rule from "../../../lib/rules/resolve-async";
+import rule from "../../../lib/rules/resolve-async.js";
 import { RuleTester } from "eslint";
 
 //------------------------------------------------------------------------------
